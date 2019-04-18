@@ -1,5 +1,7 @@
 using Test
 
+@testset "ApplicationBuilder.jl" begin
+
 # TODO: Make the tests work on Windows and Linux!!! :'(
 @static if Sys.isapple()
 
@@ -10,4 +12,11 @@ end
     include("build_app-cli.jl")
 end
 
+else  # Windows and Linux
+
+@testset "bundle.jl" begin
+    include("bundle.jl")
+end
+
+end
 end
